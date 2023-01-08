@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from 'styled-components';
 import CartStyles from './styles/CartStyles';
 import CloseButton from './styles/CloseButton';
@@ -6,6 +7,7 @@ import formatMoney from '../lib/formatMoney';
 import { useUser } from './User';
 import calcTotalPrice from '../lib/calcTotalPrice';
 import { useCart } from '../lib/cartState';
+import RemoveFromCart from './RemoveFromCart';
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -40,6 +42,7 @@ function CartItem({ cartItem }) {
           </em>
         </p>
       </div>
+      <RemoveFromCart id={cartItem.id} />
     </CartItemStyles>
   );
 }
